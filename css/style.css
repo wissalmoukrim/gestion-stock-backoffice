@@ -1,0 +1,188 @@
+/* ======================================
+   IMPORT GOOGLE FONT (UTILISÉE)
+====================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ======================================
+   RESET GLOBAL
+====================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* ======================================
+   BODY
+====================================== */
+body {
+    background-color: #f4f6f8;
+    height: 100vh;
+    color: #111827;
+}
+
+/* ======================================
+   LOGIN PAGE
+====================================== */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.login-container button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.login-container button:hover {
+    background-color: #1e40af;
+}
+
+#error-message {
+    color: red;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ======================================
+   NAVBAR (HAUT)
+====================================== */
+.navbar {
+    height: 60px;
+    background-color: #1f2933;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+.navbar h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.logout-btn {
+    background-color: #ef4444;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ======================================
+   LAYOUT GLOBAL
+====================================== */
+.layout {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* ======================================
+   SIDEBAR (MENU GAUCHE)
+====================================== */
+.sidebar {
+    width: 220px;
+    background-color: #111827;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #d1d5db;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1f2933;
+    color: white;
+}
+
+/* ======================================
+   CONTENU PRINCIPAL
+====================================== */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* ======================================
+   STATISTICS CARDS
+====================================== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
