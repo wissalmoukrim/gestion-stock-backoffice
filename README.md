@@ -1,101 +1,62 @@
-# 📦 Gestion de Stock du Magasin – Backoffice
+# 🏪 Gestion de Stock du Magasin — Backoffice
 
-## 📌 Description du projet
-Ce projet est une application web **Backoffice de gestion de stock** destinée à un magasin.
-Elle permet à l’administrateur de gérer les **produits, catégories, fournisseurs, entrepôts et commandes**
-via une interface simple, claire et responsive.
+## 📌 Description
+Ce projet est une application web de **gestion de stock d’un magasin**, développée dans un cadre académique.  
+Il permet de gérer les **produits, catégories, fournisseurs, entrepôts et commandes** via une interface backoffice moderne.
 
-Le projet a été réalisé dans un **cadre académique** afin de mettre en pratique :
-- le développement web frontend
-- le CRUD (Create, Read, Update, Delete)
-- la manipulation du DOM
-- l’utilisation d’une **API REST** avec `json-server`
+L’objectif du projet est de comprendre et maîtriser :
+- le CRUD en JavaScript
+- la communication avec une API (json-server)
+- l’organisation d’un projet web professionnel
 
 ---
 
-## 🎯 Objectifs pédagogiques
-- Comprendre et implémenter la logique CRUD
-- Manipuler des données via une API REST
-- Utiliser `fetch` et `async/await`
-- Structurer un projet web proprement
-- Simuler un backend avec **Node.js** et **json-server**
-- Relier un frontend à une API
-
----
-
-## 🛠️ Technologies utilisées
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla JS)**
-- **Node.js**
-- **json-server**
-- **Git & GitHub**
-
----
-
-
----
-
-## ⚙️ Fonctionnalités principales
+## 🚀 Fonctionnalités
 
 ### 🔐 Authentification
-- Page de connexion administrateur
+- Page de connexion (login)
+- Accès au dashboard après authentification
 
 ### 📊 Dashboard
-- Affichage dynamique des statistiques :
+- Statistiques en temps réel :
   - Nombre de produits
   - Nombre de catégories
   - Nombre de fournisseurs
   - Nombre d’entrepôts
   - Nombre de commandes
+- Données récupérées via l’API
 
-### 📦 Gestion des produits
+### 📦 Gestion des Produits
 - Ajouter un produit
 - Modifier un produit
 - Supprimer un produit
-- Données gérées via API REST
+- Affichage dynamique dans un tableau
 
-### 🗂️ Gestion des catégories
+### 🗂️ Gestion des Catégories
 - CRUD complet via API
 
-### 🚚 Gestion des fournisseurs
+### 🚚 Gestion des Fournisseurs
 - CRUD complet via API
 
-### 🏬 Gestion des entrepôts
+### 🏬 Gestion des Entrepôts
 - CRUD complet via API
 
-### 🧾 Gestion des commandes
+### 📝 Gestion des Commandes
 - CRUD complet via API
+
+### 🔓 Déconnexion
+- Bouton de déconnexion fonctionnel sur toutes les pages
 
 ---
 
-## 🔌 API REST (json-server)
+## 🛠️ Technologies utilisées
 
-Le projet utilise **json-server** pour simuler un backend.
-
-### Endpoints utilisés :
-- `GET /products`
-- `GET /categories`
-- `GET /suppliers`
-- `GET /warehouses`
-- `GET /orders`
-- `POST /`
-- `PUT /:id`
-- `DELETE /:id`
+- **HTML5**
+- **CSS3**
+- **JavaScript (Vanilla JS)**
+- **Node.js**
+- **json-server** (API REST simulée)
+- **Git & GitHub**
 
 ---
 
-## ▶️ Instructions pour lancer le projet
-
-### 1️⃣ Installer Node.js
-Télécharger la version **LTS** depuis :
-https://nodejs.org
-
-Vérifier l’installation :
-```bash
-node -v
-npm -v
-
-### 2️⃣ Installer json-server, lancer l’API et démarrer le projet
-npm install -g json-server
-json-server --watch data/db.json --port 3000
