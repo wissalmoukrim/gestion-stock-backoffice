@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Catégories | Gestion de Stock du magasin</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h1>Gestion de Stock du magasin</h1>
+        <button class="logout-btn">Déconnexion</button>
+    </header>
+
+    <!-- LAYOUT GLOBAL -->
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="categories.html">Catégories</a></li>
+                <li><a href="fournisseurs.html">Fournisseurs</a></li>
+                <li><a href="entrepots.html">Entrepôts</a></li>
+                <li><a href="commandes.html">Commandes</a></li>
+            </ul>
+        </aside>
+
+        <!-- CONTENU PRINCIPAL -->
+        <main class="content">
+            <h2>Gestion des catégories</h2>
+
+            <!-- FORMULAIRE -->
+            <section class="form-section">
+                <h3>Ajouter / Modifier une catégorie</h3>
+
+                <form id="categoryForm">
+                    <label for="categoryName">Nom de la catégorie</label>
+                    <input type="text" id="categoryName" required>
+
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </section>
+
+            <!-- TABLEAU -->
+            <section class="table-section">
+                <h3>Liste des catégories</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="categoriesTableBody">
+                        <!-- contenu dynamique -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="../js/categories.js"></script>
+
+</body>
+</html>

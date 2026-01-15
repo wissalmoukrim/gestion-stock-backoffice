@@ -2,21 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard | Gestion de Stock</title>
+    <title>Dashboard | Gestion de Stock du magasin</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <!-- NAVBAR (barre du haut) -->
+    <!-- NAVBAR -->
     <header class="navbar">
-        <h1>Gestion de Stock</h1>
+        <h1>Gestion de Stock du magasin</h1>
         <button class="logout-btn">Déconnexion</button>
     </header>
 
     <!-- LAYOUT GLOBAL -->
     <div class="layout">
 
-        <!-- SIDEBAR (menu gauche) -->
+        <!-- SIDEBAR -->
         <aside class="sidebar">
             <ul>
                 <li><a href="dashboard.html">Dashboard</a></li>
@@ -32,8 +32,9 @@
         <main class="content">
             <h2>Tableau de bord</h2>
 
-            <!-- STATISTIQUES DYNAMIQUES -->
+            <!-- STATISTIQUES -->
             <div class="stats">
+
                 <div class="card">
                     <h3>Produits</h3>
                     <p id="productsCount">0</p>
@@ -50,9 +51,15 @@
                 </div>
 
                 <div class="card">
+                    <h3>Entrepôts</h3>
+                    <p id="warehousesCount">0</p>
+                </div>
+
+                <div class="card">
                     <h3>Commandes</h3>
                     <p id="ordersCount">0</p>
                 </div>
+
             </div>
         </main>
 

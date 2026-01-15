@@ -1,28 +1,33 @@
-// Données simulées (plus tard viendront du CRUD)
-const products = [
-    { id: 1, name: "Produit A" },
-    { id: 2, name: "Produit B" },
-    { id: 3, name: "Produit C" }
-];
+// ===============================
+// DASHBOARD - DONNÉES VIA API
+// ===============================
 
-const categories = [
-    { id: 1, name: "Catégorie 1" },
-    { id: 2, name: "Catégorie 2" }
-];
+const API_BASE = "http://localhost:3000";
 
-const suppliers = [
-    { id: 1, name: "Fournisseur X" }
-];
+// Récupération des éléments HTML
+const productsCountEl = document.getElementById("productsCount");
+const categoriesCountEl = document.getElementById("categoriesCount");
+const suppliersCountEl = document.getElementById("suppliersCount");
+const warehousesCountEl = document.getElementById("warehousesCount");
+const ordersCountEl = document.getElementById("ordersCount");
 
-const orders = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 }
-];
+// Fonction générique pour récupérer un compteur
+async function fetchCount(endpoint, element) {
+    if (!element) return;
 
-// Injection des statistiques dans le DOM
-document.getElementById("productsCount").textContent = products.length;
-document.getElementById("categoriesCount").textContent = categories.length;
-document.getElementById("suppliersCount").textContent = suppliers.length;
-document.getElementById("ordersCount").textContent = orders.length;
+    const response = await fetch(`${API_BASE}/${endpoint}`);
+    const data = await response.json();
+    element.textContent = data.length;
+}
+
+// Charger les statistiques
+async function loadDashboardStats() {
+    await fetchCount("products", productsCountEl);
+    await fetchCount("categories", categoriesCountEl);
+    await fetchCount("suppliers", suppliersCountEl);
+    await fetchCount("warehouses", warehousesCountEl);
+    await fetchCount("orders", ordersCountEl);
+}
+
+// Lancement
+loadDashboardStats();

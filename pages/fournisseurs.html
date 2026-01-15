@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fournisseurs | Gestion de Stock du magasin</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h1>Gestion de Stock du magasin</h1>
+        <button class="logout-btn">Déconnexion</button>
+    </header>
+
+    <!-- LAYOUT GLOBAL -->
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="categories.html">Catégories</a></li>
+                <li><a href="fournisseurs.html">Fournisseurs</a></li>
+                <li><a href="entrepots.html">Entrepôts</a></li>
+                <li><a href="commandes.html">Commandes</a></li>
+            </ul>
+        </aside>
+
+        <!-- CONTENU PRINCIPAL -->
+        <main class="content">
+            <h2>Gestion des fournisseurs</h2>
+
+            <!-- FORMULAIRE -->
+            <section class="form-section">
+                <h3>Ajouter / Modifier un fournisseur</h3>
+
+                <form id="supplierForm">
+                    <label for="supplierName">Nom du fournisseur</label>
+                    <input type="text" id="supplierName" required>
+
+                    <label for="supplierPhone">Téléphone</label>
+                    <input type="text" id="supplierPhone" required>
+
+                    <label for="supplierEmail">Email</label>
+                    <input type="email" id="supplierEmail" required>
+
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </section>
+
+            <!-- TABLEAU -->
+            <section class="table-section">
+                <h3>Liste des fournisseurs</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Téléphone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="suppliersTableBody">
+                        <!-- dynamique -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="../js/fournisseurs.js"></script>
+
+</body>
+</html>
