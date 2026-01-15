@@ -1,33 +1,33 @@
 // ===============================
-// DASHBOARD - DONNÉES VIA API
+// DASHBOARD - STATISTIQUES VIA API
 // ===============================
 
-const API_BASE = "http://localhost:3000";
+document.addEventListener("DOMContentLoaded", async () => {
 
-// Récupération des éléments HTML
-const productsCountEl = document.getElementById("productsCount");
-const categoriesCountEl = document.getElementById("categoriesCount");
-const suppliersCountEl = document.getElementById("suppliersCount");
-const warehousesCountEl = document.getElementById("warehousesCount");
-const ordersCountEl = document.getElementById("ordersCount");
+    // Sécurité : récupérer les éléments (peuvent ne pas exister)
+    const productsCountEl = document.getElementById("productsCount");
+    const categoriesCountEl = document.getElementById("categoriesCount");
+    const suppliersCountEl = document.getElementById("suppliersCount");
+    const warehousesCountEl = document.getElementById("warehousesCount");
+    const ordersCountEl = document.getElementById("ordersCount");
 
-// Fonction générique pour récupérer un compteur
-async function fetchCount(endpoint, element) {
-    if (!element) return;
+    try {
+        // Appels API (centralisés)
+        const products = productsCountEl ? await apiGet("products") : [];
+        const categories = categoriesCountEl ? await apiGet("categories") : [];
+        const suppliers = suppliersCountEl ? await apiGet("suppliers") : [];
+        const warehouses = warehousesCountEl ? await apiGet("warehouses") : [];
+        const orders = ordersCountEl ? await apiGet("orders") : [];
 
-    const response = await fetch(`${API_BASE}/${endpoint}`);
-    const data = await response.json();
-    element.textContent = data.length;
-}
+        // Injection des compteurs
+        if (productsCountEl) productsCountEl.textContent = products.length;
+        if (categoriesCountEl) categoriesCountEl.textContent = categories.length;
+        if (suppliersCountEl) suppliersCountEl.textContent = suppliers.length;
+        if (warehousesCountEl) warehousesCountEl.textContent = warehouses.length;
+        if (ordersCountEl) ordersCountEl.textContent = orders.length;
 
-// Charger les statistiques
-async function loadDashboardStats() {
-    await fetchCount("products", productsCountEl);
-    await fetchCount("categories", categoriesCountEl);
-    await fetchCount("suppliers", suppliersCountEl);
-    await fetchCount("warehouses", warehousesCountEl);
-    await fetchCount("orders", ordersCountEl);
-}
+    } catch (error) {
+        console.error("Erreur lors du chargement du dashboard :", error);
+    }
 
-// Lancement
-loadDashboardStats();
+});

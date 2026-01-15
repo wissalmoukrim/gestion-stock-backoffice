@@ -1,13 +1,18 @@
 {
   "products": [
     {
-      "id": "07d8",
-      "name": "uujk",
-      "price": "66",
-      "quantity": "88"
+      "id": "c321",
+      "name": "ty",
+      "price": "7",
+      "quantity": "2"
     }
   ],
-  "categories": [],
+  "categories": [
+    {
+      "id": "b00d",
+      "name": "info"
+    }
+  ],
   "suppliers": [],
   "warehouses": [],
   "orders": []
